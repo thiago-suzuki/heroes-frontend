@@ -21,12 +21,12 @@ Aplicação de Cadastro e Consulta de Heróis que Salvam o Mundo
 - Pacote de Gerenciamento de Dependências: NPM
 - Framework: Angular + Ionic
 - Deploy: Vercel
-- Link Deploy:
+- Link Deploy: https://heroes-frontend-eta.vercel.app/
 
 <br>
 
 ## Como Rodar a Aplicação
-- Primeiro, clone o projeto backend e realize a instalação: https://github.com/thiago-suzuki/heroes-backend>
+- Primeiro, clone o projeto backend e realize a instalação: https://github.com/thiago-suzuki/heroes-backend
 - Clone o projeto frontend
 - Realize a instalação das dependências:
 ```bash
