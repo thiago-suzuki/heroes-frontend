@@ -1,0 +1,80 @@
+<ion-header class="ion-no-border header">
+  <div class="content">
+    <div class="header-title">
+      <div>
+        <ion-text><i class="fa fa-gamepad"></i>&ensp;HERÓIS DO MUNDO INTEIRO</ion-text>
+      </div>
+    </div>
+    <br>
+    <div class="terminal">
+      <ion-text>Tipo</ion-text>
+        <div class="terminal-select">
+          <ion-select [(ngModel)]="status" (ionChange)="onSelectStatus()">
+            <ion-select-option [value]="'all'">Todos</ion-select-option>
+            <ion-select-option [value]="'heroes'">Heróis</ion-select-option>
+            <ion-select-option [value]="'not-heroes'">Não Heróis</ion-select-option>
+          </ion-select>
+        </div>
+    </div>
+    <br>
+    <div class="buttons-not-to-edit">
+      <ion-button mode="ios" class="add-trucks" (click)="addNewKnight()">
+        <ion-text><i class="fa fa-plus"></i>&ensp;Cadastrar Novo Herói</ion-text>
+      </ion-button>
+    </div> 
+  </div>
+</ion-header>
+
+<ion-content>
+  <div class="table-container" *ngIf="!loading">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Nome</th>
+          <th>Nickname</th>
+          <th>Idade</th>
+          <th>Aniversário</th>
+          <th>Ataque</th>
+          <th>EXP</th>
+          <th>Herói</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of knights">
+          <td>
+            <img src="assets/avatar.jpg" class="avatar">
+          </td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.nickname }}</td>
+          <td>{{ item.age }}</td>
+          <td>{{ item.birthday }}</td>
+          <td>{{ item.attack }}</td>
+          <td>{{ item.exp }}</td>
+          <td>{{ item.deletedAt ? 'Sim' : 'Não' }}</td>
+          <td>
+            <ion-button (click)="editNickname(item)">
+              <i class="fa fa-edit"></i>
+            </ion-button>
+
+            <ion-button style="--background: #000000" (click)="goToDetialsKnight(item)">
+              <i class="fa fa-info"></i>
+            </ion-button>
+
+            <ion-button style="--background: #e80909" (click)="deleteKnight(item)">
+              <i class="fa fa-level-up"></i>
+            </ion-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ion-padding custom-skeleton" *ngIf="loading">
+    <ion-skeleton-text animated style="width: 100%; height: 100px; padding-bottom: 16px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 100%; height: 100px; padding-bottom: 16px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 100%; height: 100px; padding-bottom: 16px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 100%; height: 100px; padding-bottom: 16px;"></ion-skeleton-text>
+  </div>
+</ion-content>

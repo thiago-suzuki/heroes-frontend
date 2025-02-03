@@ -1,0 +1,215 @@
+@import '~font-awesome/css/font-awesome.min.css';
+
+.input-style {
+    width: 100%;
+    border: solid 1px #A7A7A7;
+    border-radius: 5px;
+    height: 34px;
+    font-size: 14px;
+    color: #707070;
+    font-weight: bold;
+    margin-top: 4px;
+    --padding-start: 10px;
+}
+
+.input-invalid {
+  border: solid 1px red !important;
+}
+  
+.input-style-disabled {
+    width: 100%;
+    border: solid 1px #A7A7A7;
+    border-radius: 5px;
+    height: 34px;
+    font-size: 14px;
+    color: #585858;
+    background-color: #f5f5f5;
+    font-weight: bold;
+    margin-top: 4px;
+    --padding-start: 10px;
+    opacity: 1;
+}
+  
+.select-style {
+    cursor: pointer;
+    border: solid 1px #A7A7A7;
+    border-radius: 5px;
+    height: 34px;
+    width: 100%;
+    margin-top: 4px;
+    color: #707070;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 6px;
+}
+
+#main {
+    .arrow-icon {
+      cursor: pointer;
+      padding: 0 16px;
+      font-size: 28px;
+    }
+  
+    ion-icon {
+      color: #FF5733;
+      font-size: 32px;
+      padding: 0 16px 0 0;
+    }
+    
+    .titles {
+      ion-label {
+        font-size: 14px;
+        font-weight: 900;
+        color: #707070;
+      }
+  
+      ion-text {
+        font-size: 14px;
+        font-weight: 600;
+        color: #707070;
+      }
+    }
+}
+  
+ion-grid {
+    margin: 0;
+    padding: 0;
+}
+ion-row {
+    margin: 0;
+    padding: 0;
+}
+ion-col {
+    margin: 0;
+    padding: 0;
+}
+  
+ion-row {
+    margin: 16px;
+  
+    ion-col {
+      ion-label {
+        font-size: 14px;
+        color: #707070;
+        font-weight: bold;
+      }
+      
+      .input-invalid {
+        border: solid 1px red !important;
+      }
+    }
+  
+    .padding-right-col {
+      padding-right: 8px;
+    }
+  
+    .padding-left-col {
+      padding-left: 8px;
+    }
+  
+    .col-relative {
+      position: relative;
+  
+      .text-absolute {
+        position: absolute;
+        font-size: 14px;
+        color: #707070;
+        font-weight: bold;
+        right: 2px;
+      }
+    }
+}
+
+.last-row {
+    padding-bottom: 24px;
+    border-bottom: solid 1px #A7A7A7;
+}
+
+.border-bottom {
+  padding-bottom: 24px;
+  border-bottom: solid 2.5px #A7A7A7;
+}
+
+.add-trucks {
+  width: 95%;
+  height: 55px;
+  border: 1px solid #FF5733 ;
+  --background: #fff;
+  --background-hover: #fff;
+  --background-activated: #88f4be;
+  --background-focused: #88f4be;
+  color: #FF5733 ;
+  font-weight: 700;
+  margin-left: 11px;
+}
+
+.button-remove {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding: 7px;
+
+  .remove {
+    ion-text {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: white;
+      font-weight: 700;
+    }
+    width: 185px;
+    height: 35px;
+    --background: red;
+    --background-hover: red;
+    --background-activated: rgb(114, 3, 3);
+    --background-focused: rgb(114, 3, 3);
+  }
+}
+
+.weapons-form {
+  margin-top: -8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logs {
+    background-color: #f0f0f0; 
+    border: 1px solid #ccc;   
+    border-radius: 8px;      
+    padding: 16px;           
+    width: 100%;            
+    margin: 16px auto;       
+    font-family: Arial, sans-serif; 
+}
+
+.text-status {
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.box-title {
+  width: 100%;
+  padding: 16px 16px;
+
+  .title {
+    font-size: 10px;
+    color: #707070;
+    font-weight: bold;
+  }
+
+  .sub-title {
+    font-size: 14px;
+    color: #707070;
+    font-weight: 900;
+  }
+}
+
+.last-row {
+  padding-bottom: 24px;
+  border-bottom: solid 1px #A7A7A7;
+
+  .remove-padding-left {
+    padding-left: 0 !important;
+  }
+}

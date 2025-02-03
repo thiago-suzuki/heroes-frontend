@@ -1,0 +1,8 @@
+{
+  "name": "heroes-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "79ae0b81"
+}

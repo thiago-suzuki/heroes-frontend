@@ -1,0 +1,309 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+* {
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+/*start - this css is to show scrollbar on ion-selects - there' s an open issue about it: https://github.com/ionic-team/ionic/issues/17397*/
+.alert-radio-group::-webkit-scrollbar,
+.alert-checkbox-group::-webkit-scrollbar {
+  width: 0.5em;
+  display: block !important;
+}
+
+.alert-radio-group::-webkit-scrollbar-track,
+.alert-checkbox-group::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.alert-radio-label.sc-ion-alert-md, .alert-radio-label.sc-ion-alert-ios {
+  white-space: normal !important;
+}
+
+[aria-checked=true].sc-ion-alert-md .alert-checkbox-icon.sc-ion-alert-md {
+  border-color:  #3DC2FF;
+  background-color: #3DC2FF;
+}
+
+.alert-radio-group::-webkit-scrollbar-thumb,
+.alert-checkbox-group::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.popup-css-modal {
+  .modal-wrapper{
+    height: 40%;
+    width: 33%;
+    border-radius: 15px;
+  }
+}
+
+.alert-confirm-center {
+  .alert-wrapper {
+    .alert-head {
+      text-align: center;
+      h2:first-child {
+        font-weight: 600;
+        color: #FF5733;
+      }
+      .alert-sub-title {
+        margin-top: 20px;
+      }
+    }
+    .alert-message {
+      text-align: center;
+    }
+  }
+}
+
+.alert-controller-input {
+  .alert-wrapper {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 390px) {
+  .popup-css-modal {
+    .modal-wrapper{
+      height: 40%;
+      width: 90%;
+      border-radius: 15px;
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .popup-css-modal {
+    .modal-wrapper{
+      height: 35%;
+      width: 90%;
+      border-radius: 15px;
+    }
+  }
+}
+
+
+.alert-confirm-delete {
+  .alert-wrapper {
+    .alert-head {
+      text-align: center;
+      h2:first-child {
+        font-weight: 600;
+        color: #FF5733;
+      }
+      .alert-sub-title {
+        margin-top: 20px;
+      }
+    }
+  }
+
+ion-button {
+  background: var(--background);
+  border-radius: var(--border-radius);
+  color: var(--color);
+
+  &.global-button {
+    --border-radius: 5px;
+  }
+
+  &.button-add {
+    --background: #b2bbbd;
+    --color: #fff;
+    &[disabled] {
+      --background: #a7a7a7;
+    }
+  }
+
+  &.button-clear {
+    &[disabled] {
+      --color: #a7a7a7;
+    }
+  }
+}
+
+.class-custom-action-sheet {
+  ion-icon {
+    color: #FF5733 !important;
+  }
+
+  span {
+    font-size: 16px;
+    color: #707070;
+  }
+}
+
+.alert-confirm-import {
+  h2 {
+    font-weight: 700 !important;
+    color: #707070 !important;
+  }
+
+  .cancel-button,
+  .confirm-button {
+    span {
+      color: #FF5733 !important;
+    }
+  }
+}
+
+input[type="datetime-local"]::-webkit-inner-spin-button,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+
+#remove-style-input[type="datetime-local"]::-webkit-inner-spin-button,
+#remove-style-input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+#remove-style-input::-webkit-inner-spin-button,
+#remove-style-input::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  display: none !important;
+  -webkit-appearance: none !important;
+}
+/*end*/
+
+.class-custom-action-sheet {
+  .action-sheet-icon.sc-ion-action-sheet-md {
+    margin-inline-end: 16px !important;
+    webkit-margin-end: 16px !important;
+  }
+
+  .action-sheet-group-cancel {
+    border-top: solid 1px #707070;
+  }
+}
+
+.alert-head.sc-ion-alert-md {
+  text-align: left;
+}
+
+.alert-button-group.sc-ion-alert-md {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.alert-button.sc-ion-alert-md {
+  color: #FF5733;
+  --color: #FF5733;
+}
+
+.alert-checkbox-icon.sc-ion-alert-md {
+  color: #3DC2FF !important;
+  border-radius: 50%;
+  --color: #3DC2FF !important;
+  --border-radius: 50%;
+}
+
+.popover-list-options {
+  --width: auto;
+}
+
+.search-box {
+  border-bottom: solid 1px #00000029;
+
+  ion-searchbar{
+    --box-shadow: none;
+    --icon-color: #A7A7A7;
+
+    input {
+      padding-left: 35px !important;
+      text-align: initial !important;
+
+      &::-webkit-input-placeholder {
+        color: #707070;
+        font-size: 14px;
+      }
+    }
+
+    ion-icon {
+      width: 17px !important;
+      left: 10px !important;
+    }
+  }
+}
+
+ion-slides {
+
+  .swiper-pagination {
+    top: -8px;
+    bottom: auto;
+    left: auto;
+    bottom: auto !important;
+
+    .swiper-pagination-bullet {
+      background: #fff;
+      border: solid 1.5px #707070;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #FF5733;
+      border: solid 1px #FF5733;
+    }
+  }
+}
+
+.footer-md:before {
+  background: none;
+}
+
+.select-disabled {
+  opacity: 0.8 !important;
+}
+
+.camera-or-file-action-sheet {
+
+
+  .action-sheet-title {
+    font-size: 16px !important;
+    color: #A7A7A7 !important;
+    height: 50px !important;
+  }
+
+  .action-sheet-button {
+    height: 44px !important;
+  }
+
+
+  .options {
+    font-size: 16px !important;
+    color: #707070 !important;
+  }
+
+  .cancel {
+    font-size: 16px !important;
+    color: #707070 !important;
+    border-top: solid 1px #A7A7A7 !important;
+  }
+}}

@@ -1,0 +1,152 @@
+<ion-header id="main">
+  <ion-toolbar>
+    <ion-icon class="arrow-icon" slot="start" name="arrow-back-outline" (click)="backButton()"></ion-icon>
+    <div>
+      <div class="titles">
+        <ion-text>{{ create ?  'Adicionar Novo Herói' : 'Detalhes do Herói ' + knight.name }}</ion-text>
+      </div>
+    </div>
+
+    <ion-icon *ngIf="create" style="color: green; cursor: pointer;" slot="end" name="checkmark-circle-outline" (click)="submit()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-grid *ngIf="!loading">
+    <div class="box-title">
+      <ion-text class="title">DETALHES</ion-text><br>
+      <ion-text class="sub-title">DADOS DO HERÓI</ion-text>
+    </div>
+
+    <ion-row>
+      <ion-col size="6" class="padding-right-col" [formGroup]="knightForm">
+        <ion-label>Nome</ion-label>
+        <ion-input type="text" class="input-style" [ngClass]="{'input-invalid': knightForm.get('name')?.invalid && knightForm.get('name')?.touched, 'input-style-disabled': !this.create}" formControlName="name"></ion-input>
+      </ion-col>
+      <ion-col size="6" class="padding-left-col" [formGroup]="knightForm">
+        <ion-label>Nickname</ion-label>
+        <ion-input type="text" class="input-style" [ngClass]="{'input-invalid': knightForm.get('nickname')?.invalid && knightForm.get('nickname')?.touched, 'input-style-disabled': !this.create}" formControlName="nickname"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6" class="padding-right-col" [formGroup]="knightForm">
+        <ion-label>Idade</ion-label>
+        <ion-input type="number" class="input-style" formControlName="age" [ngClass]="{'input-invalid': knightForm.get('age')?.invalid && knightForm.get('age')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+      </ion-col>
+      <ion-col size="6" class="padding-left-col" [formGroup]="knightForm">
+        <ion-label>Aniversário</ion-label>
+        <ion-input type="text" class="input-style" formControlName="birthday" [ngClass]="{'input-invalid': knightForm.get('birthday')?.invalid && knightForm.get('birthday')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="last-row">
+      <ion-col size="12" class="col-relative" [formGroup]="knightForm">
+        <ion-label>Capacidade Forte</ion-label>
+        <ion-select formControlName="keyAttribute" type="text" class="select-style" [ngClass]="{'input-invalid': knightForm.get('keyAttribute')?.invalid && knightForm.get('keyAttribute')?.touched, 'input-style-disabled': !this.create}">
+          <ion-select-option value="strength">Força</ion-select-option>
+          <ion-select-option value="dexterity">Destreza</ion-select-option>
+          <ion-select-option value="constitution">Constituição</ion-select-option>
+          <ion-select-option value="intelligence">Inteligência</ion-select-option>
+          <ion-select-option value="wisdom">Sabedoria</ion-select-option>
+          <ion-select-option value="charisma">Carisma</ion-select-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+
+    <div class="box-title">
+      <ion-text class="title">DADOS</ion-text><br>
+      <ion-text class="sub-title">ATRIBUTOS DO HERÓI</ion-text>
+    </div>
+
+    <ion-row>
+      <ion-col size="6" class="padding-right-col" [formGroup]="knightForm">
+        <ion-label>Força</ion-label>
+        <ion-input type="number" class="input-style" formControlName="strength" [ngClass]="{'input-invalid': knightForm.get('strength')?.invalid && knightForm.get('strength')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+      </ion-col>
+      <ion-col size="6" class="padding-left-col" [formGroup]="knightForm">
+        <ion-label>Desastreza</ion-label>
+        <ion-input type="number" class="input-style" formControlName="dexterity" [ngClass]="{'input-invalid': knightForm.get('dexterity')?.invalid && knightForm.get('dexterity')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6" class="padding-right-col" [formGroup]="knightForm">
+        <ion-label>Constituição</ion-label>
+        <ion-input type="number" class="input-style" formControlName="constitution" [ngClass]="{'input-invalid': knightForm.get('constitution')?.invalid && knightForm.get('constitution')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+      </ion-col>
+      <ion-col size="6" class="padding-left-col" [formGroup]="knightForm">
+        <ion-label>Inteligência</ion-label>
+        <ion-input type="number" class="input-style" formControlName="intelligence" [ngClass]="{'input-invalid': knightForm.get('intelligence')?.invalid && knightForm.get('intelligence')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="last-row">
+      <ion-col size="6" class="padding-right-col" [formGroup]="knightForm">
+        <ion-label>Sabedoria</ion-label>
+        <ion-input type="number" class="input-style" formControlName="wisdom" [ngClass]="{'input-invalid': knightForm.get('wisdom')?.invalid && knightForm.get('wisdom')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+      </ion-col>
+      <ion-col size="6" class="padding-left-col" [formGroup]="knightForm">
+        <ion-label>Carisma</ion-label>
+        <ion-input type="number" class="input-style" formControlName="charisma" [ngClass]="{'input-invalid': knightForm.get('charisma')?.invalid && knightForm.get('charisma')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <div class="box-title">
+      <ion-text class="title">EQUIPAMENTOS</ion-text><br>
+      <ion-text class="sub-title">ARMAS DO HERÓI</ion-text>
+    </div>
+
+    <div [formGroup]="knightForm">
+      <div formArrayName="weapons">
+        <ion-row class="weapons-form" *ngFor="let weapon of weapons.controls; let last = last; let i = index" [formGroupName]="i">
+          <ion-row>
+            <ion-col size="6" class="padding-right-col">
+              <ion-label>Nome da Arma</ion-label>
+              <ion-input type="text" formControlName="name" class="input-style" [ngClass]="{'input-invalid': weapon.get('name')?.invalid && weapon.get('name')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+            </ion-col>
+            <ion-col size="6" class="padding-left-col">
+              <ion-label>Mod</ion-label>
+              <ion-input type="number" formControlName="mod" class="input-style" [ngClass]="{'input-invalid': weapon.get('mod')?.invalid && weapon.get('mod')?.touched, 'input-style-disabled': !this.create}"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6" class="padding-right-col">
+              <ion-label>Atributo</ion-label>
+              <ion-select formControlName="attr" type="text" class="select-style" [ngClass]="{'input-invalid': weapon.get('attr')?.invalid && weapon.get('attr')?.touched, 'input-style-disabled': !this.create}">
+                <ion-select-option value="gun">Arma</ion-select-option>
+                <ion-select-option value="explosive">Explosivo</ion-select-option>
+                <ion-select-option value="sharpening">Afiação</ion-select-option>
+              </ion-select>
+            </ion-col>
+            <ion-col size="6" class="padding-left-col">
+              <ion-label>Equipado</ion-label>
+              <ion-select formControlName="equipped" type="text" class="select-style" [ngClass]="{'input-invalid': weapon.get   ('equipped')?.invalid && weapon.get('equipped')?.touched, 'input-style-disabled': !this.create}">
+                <ion-select-option value="yes">Sim</ion-select-option>
+                <ion-select-option value="no">Não</ion-select-option>
+              </ion-select>
+            </ion-col>
+          </ion-row>
+          <div class="border-bottom button-remove" *ngIf="!last || i > 0">
+            <ion-button mode="ios" class="remove" (click)="removeWeapon(i)" *ngIf="create">
+              <ion-text><ion-icon size="small" name="trash-outline"></ion-icon>&ensp;Remover Arma</ion-text>
+            </ion-button>
+          </div>
+        </ion-row>
+      </div>
+    </div>
+
+    <ion-button class="add-trucks" (click)="addWeapon()" *ngIf="create">
+      <i class="fa fa-plus"></i>&ensp;Adicionar Arma
+    </ion-button>
+  </ion-grid>
+
+  <div class="ion-padding custom-skeleton" *ngIf="loading">
+    <ion-skeleton-text animated style="width: 100%; height: 57px; padding-bottom: 16px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 100%; height: 57px; padding-bottom: 16px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 100%; height: 57px; padding-bottom: 16px;"></ion-skeleton-text>
+    <ion-skeleton-text animated style="width: 100%; height: 57px; padding-bottom: 16px;"></ion-skeleton-text>
+  </div>
+</ion-content>
